@@ -87,13 +87,13 @@ tmux usage
 If you passed the test case, then you will see the following message.
 ```
 Test case 1
-\===========
+===========
 Test passed!
 ```
 If failed, then you will see the following message. 
 ```
 Test case 3
-\===========
+===========
 user 0: 3 different lines!
 user 3: 1 different lines!
 ```
