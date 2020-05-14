@@ -53,9 +53,11 @@ The number before ':' represents the client (user) number. Because we will test 
 ### 2. Change to directory ```nctu_nphw3_demo```
 ### 3. Run ```demo.sh```
 
-Every time you want to run this script, please clean your database or all files used to store metadata and Amazon S3 buckets and objects first.
+- Every time you want to run this script, please clean your database or all files used to store metadata and Amazon S3 buckets and objects first.
+- Please make sure your AWS credential does not expire before running this script.
 
 This script will create an```output```directory to store your program output for each test case.
+
 ```
 ./demo.sh <command-to-run-your-client-program> <server-ip> <server-port>
 ```
