@@ -51,7 +51,13 @@ The number before ':' represents the client (user) number. Because we will test 
 ## Usage
 ### 1. Run your server first.
 ### 2. Change to directory ```nctu_nphw3_demo```
-### 3. Run ```demo.sh```
+### 3. Install ```tmux``` and ```vim```
+If you have installed these tools, you can skip this step. Otherwise, please install these tools.
+```
+sudo apt install tmux
+sudo apt install vim
+```
+### 4. Run ```demo.sh```
 
 - Every time you want to run this script, please clean your database or all files used to store metadata and Amazon S3 buckets and objects first.
 - Please make sure your AWS credential does not expire before running this script.
@@ -99,7 +105,7 @@ user 3: 1 different lines!
 ```
 It means that there are 3 different lines between your client program output and answer output for user 0 in test case 3. And, there are 1 different line between your client program output and answer output for user 3 in test case 3.
 
-### 4. Run ```compare.sh``` to see the different lines.
+### 5. Run ```compare.sh``` to see the different lines.
 Type ```./compare.sh <test case number> <user number>```
 
 It will compare your program output for user \<user number\> with the answer output for user \<user number\> in test case \<test case number\>.
