@@ -18,17 +18,19 @@ DATE_TODAY=$(date +%m/%d)
 for i in $(seq ${START_CASE} ${END_CASE})
 do
 	TARGET_DIR=${OUTPUT_DIR}/t${i}
-
+	
 	echo "Test case ${i}"
     echo "==============="
     
+	number_of_files=$(ls ${TARGET_DIR} | wc -l)
 	total_errors=0
 
 	for user in $(seq 0 ${USER_NO})
 	do
         sed -i "s_[0-9]\{2\}/[0-9]\{2\}_${DATE_TODAY}_g" ${ANSWER_DIR}/t${i}/user${user}
         sed -i "s_[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}_${DATE_FULL}_g" ${ANSWER_DIR}/t${i}/user${user}
-		errors=$( diff -wy --suppress-common-lines ${ANSWER_DIR}/t${i}/user${user} ${OUTPUT_DIR}/t${i}/user${user} | wc -l )
+		errors=$( diff -wyB --suppress-common-lines ${ANSWER_DIR}/t${i}/user${user} ${OUTPUT_DIR}/t${i}/user${user} | wc -l )
+		
 		total_errors=$(( ${total_errors} + ${errors} ))
 
 		if [ ${errors} -ne 0 ]; then
@@ -36,8 +38,12 @@ do
 		fi
 	done
 
-	if [ ${total_errors} -eq 0 ]; then
-		echo -e "\033[1;32mTest passed!\033[m"
+	if [[ ${number_of_files} -ne ${USER_NUM} ]]; then
+		echo -e "\033[1;31mIncorrect number of output!\033[m"
+	else
+		if [ ${total_errors} -eq 0 ]; then
+			echo -e "\033[1;32mTest passed!\033[m"
+		fi
 	fi
     echo ""
 done
