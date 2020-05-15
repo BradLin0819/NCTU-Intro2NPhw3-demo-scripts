@@ -61,11 +61,11 @@ This script will create an```output```directory to store your program output for
 ```
 ./demo.sh <command-to-run-your-client-program> <server-ip> <server-port>
 ```
-    e.g.,
+e.g.,
 ```
 ./demo.sh ./client 127.0.0.1 7890
 ``` 
-    or 
+or 
 ```
 ./demo.sh python3 client.py 127.0.0.1 7890
 ```
@@ -100,7 +100,9 @@ user 3: 1 different lines!
 It means that there are 3 different lines between your client program output and answer output for user 0 in test case 3. And, there are 1 different line between your client program output and answer output for user 3 in test case 3.
 
 ### 4. Run ```compare.sh``` to see the different lines.
-```./compare.sh <test case number> <user number>```
+Type ```./compare.sh <test case number> <user number>```
+
+It will compare your program output for user \<user number\> with the answer output for user \<user number\> in test case \<test case number\>.
 
 e.g.,
 Run ```./compare.sh 3 3```. We can see the following results. There is one different line.
