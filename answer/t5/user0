@@ -2,7 +2,14 @@
 ** Welcome to the BBS server. **
 ********************************
 % Please login first.
-% Welcome, venus.
+% Welcome, diana.
+% 	ID	Subject	From	Date
+	1	Where is the post	ceres	05/22
+% 	Subject	:Where is the post
+	From	:ceres
+	Date	:2020-05-22
+	--
+	Did you delete that post?
 % Sent successfully.
-% Bye, venus.
+% Bye, diana.
 % 
